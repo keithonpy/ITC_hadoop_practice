@@ -1,6 +1,6 @@
 # Hadoop Command Line 
 
-
+## Basic operation on Hadoop
 - Show the files within the directory
   ```
   hdfs dfs -ls /path/to/directory
@@ -41,3 +41,11 @@
   sudo -u hdfs hadoop jar [path/to/hadoop-streaming.jar] -files mapper.py reducer.py
   -mapper "/usr/bin/python mapper.py" -reducer "/usr/bin/python reducer.py" -input [/path/to/file] -output [/path/to/output/directory]
   ```
+
+## Hive on HDFS
+- Run hive on HDFS
+  ```
+  beeline -u jdbc:hive2://[hostname]:[portNumber]/[databaseName] -n [username] -p [password]
+  ```
+
+
