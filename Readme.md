@@ -1,5 +1,10 @@
 # Hadoop Command Line 
 
+[Basic operation on Hadoop](##Basic-operation-on-Hadoop)
+[Python on HDFS](##Python-on-HDFS)
+[Hive on HDFS](##Hive-on-HDFS)
+[HiveQL](##HiveQL)
+
 ## Basic operation on Hadoop
 - Show the files within the directory
   ```
