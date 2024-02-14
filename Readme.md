@@ -48,5 +48,13 @@
   ```
   beeline -u jdbc:hive2://[hostname]:[portNumber]/[databaseName] -n [username] -p [password]
   ```
+## HiveQL
 
-
+- Create a external table
+```
+CREATE EXTERNAL TABLE [tableName]([variables] [var]) 
+ROW FORMAT DELIMITED 
+FIELDS TERMINATED BY ','
+STORED AS TEXTFILE
+location "[path/to/directory/storing/tables]";
+```
