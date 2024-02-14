@@ -35,7 +35,8 @@
   ```
   hdfs dfs -cat [/path/to/file]
   ```
-
+  
+## Python on HDFS
 - Run Python Scripts on Hadoop
   ```
   sudo -u hdfs hadoop jar [path/to/hadoop-streaming.jar] -files mapper.py reducer.py
