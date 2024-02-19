@@ -60,9 +60,46 @@
 
 - Create a external table
 ```
-CREATE EXTERNAL TABLE [tableName]([variables] [var]) 
+CREATE EXTERNAL TABLE [tableName]
+([variables] [type]) 
 ROW FORMAT DELIMITED 
 FIELDS TERMINATED BY ','
 STORED AS TEXTFILE
 location "[path/to/directory/storing/tables]";
 ```
+
+- Create an internal CRUD table
+```
+CREATE TABLE [tableName]
+([variables] [type]);
+```
+
+- Create an insert-only internal table
+```
+CREATE TABLE [tableName]
+([variables] [type])
+STORED AS ORC
+TBLPROPERTIES
+('transactional' = true,
+'transactional_properties'= 'insert_only');
+```
+- Load data into internal table
+```
+LOAD DATA INPATH 'path/to/the/data/file'
+INTO TABLE [tableName]
+
+```
+
+- Create temporary table
+```
+CREATE TEMPORARY TABLE [tableName]
+([variables] [type])
+```
+
+## Impala Query
+- Run impala on command prompt
+```
+impala-shell -i [ip-address] -d default
+```
+
+##
