@@ -8,6 +8,8 @@
 
 ** [HiveQL](#HiveQL)
 
+** [Impala](#Impala-Query)
+
 ## Basic operation on Hadoop
 - Show the files within the directory
   ```
