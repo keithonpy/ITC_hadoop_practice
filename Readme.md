@@ -8,7 +8,7 @@
 
 ** [HiveQL](#HiveQL)
 
-** [Impala](#Impala-Query)#
+** [Impala](#Impala-Query)
 
 ** [Sqoop Command](#Sqoop-Command)
 
@@ -113,6 +113,16 @@ INVALIDATE METADATA;
 ```
 
 ## Sqoop Command
+
+- list databases at remote PostgreSQL server
+```
+sqoop list-databases --connect jdbc:postgresql://[hostname]:5432/testdb --username [username] -P
+```
+
+- list tables at remote PostgreSQL server databases
+```
+sqoop list-tables --connect jdbc:postgresql://[hostname]:5432/testdb --username [username] -P
+```
 
 - import data files from PostgreSQL server to HDFS using sqoop, after importing the files, you need to create an **External Table** to read the data from the target directory
 - \[--m : the number of map tasks\]
