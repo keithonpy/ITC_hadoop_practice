@@ -104,4 +104,8 @@ CREATE TEMPORARY TABLE [tableName]
 impala-shell -i [ip-address] -d default
 ```
 
-##
+- Refresh the cache data since impala get the data from cache
+```
+INVALIDATE METADATA;
+```
+
