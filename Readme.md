@@ -117,12 +117,27 @@ INVALIDATE METADATA;
 - import data files from PostgreSQL server to HDFS using sqoop, after importing the files, you need to create an **External Table** to read the data from the target directory
 - \[--m : the number of map tasks\]
 ```
-sqoop import --connect jdbc:postgresql://[hostname of your PostgreSQL server]:5432/testdb --username [username] --password [password] --table [tableName] --m 1 --target-dir [path/to/target/(must be non exist dir)]
+sqoop import --connect jdbc:postgresql://[hostname of your PostgreSQL server]:5432/testdb \
+--username [username] \
+--password [password] \
+--table [tableName] \
+--m 1 \
+--target-dir [path/to/target/(must be non exist dir)]
 ```
 
 - import data files **AND** create the table using sqoop
 - \[--hs2-url: JDBC URL for connecting to HiveServer2\]
 ```
-sqoop import --connect jdbc:postgresql://[hostname of your PostgreSQL server]:5432/testdb --username [username] --password [password] --table [tableName] --target-dir [/warehouse/tablespace/managed/hive/path/to/non-exist/dir] --delete-target-dir --fields-terminated-by "," --hive-import --create-hive-table --hive-table [tableName] -m 1 --hs2-url "jdbc:hive2://[hostname]:10000/default;"
-
+sqoop import --connect jdbc:postgresql://[hostname of your PostgreSQL server]:5432/testdb \
+--username [username] \
+--password [password] \
+--table [tableName] \
+--target-dir [/warehouse/tablespace/managed/hive/path/to/non-exist/dir] \
+--delete-target-dir \
+--fields-terminated-by "," \
+--hive-import \
+--create-hive-table \
+--hive-table [tableName] \
+--m 1 \
+--hs2-url "jdbc:hive2://[hostname]:10000/default;"
 ```
