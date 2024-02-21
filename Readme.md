@@ -101,6 +101,21 @@ CREATE TEMPORARY TABLE [tableName]
 ([variables] [type])
 ```
 
+- Partitioning the table when the **column** with a high search query and **low** cardinality e.g. country
+```
+CREATE TABLE [tableName] ([variables] [type])
+PARTITIONED BY ( [partition_variables] [type]);
+```
+- Brucketing the table when the **column** has **high** cardinality
+```
+CREATE TABLE [tableName] ([variables] [type])
+CLUSTERED BY ([brucketing_variables] [type]) INTO [NUMBER] BUCKETS;
+```
+- Indexing the table
+```
+CREATE INDEX [indexName]
+ON [tableName] ([column1], [column2], ...);
+```
 ## Impala Query
 - Run impala on command prompt
 ```
