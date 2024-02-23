@@ -112,6 +112,7 @@ CREATE TABLE [tableName] ([variables] [type])
 CLUSTERED BY ([brucketing_variables] [type]) INTO [NUMBER] BUCKETS;
 ```
 - Indexing the table (Indexing Is Removed since 3.0)
+  
 https://cwiki.apache.org/confluence/display/hive/languagemanual+indexing
 
 ## Impala Query
